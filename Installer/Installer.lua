@@ -27,13 +27,11 @@ if component.isAvailable("tablet") then
 	table.insert(reasons, "Tablet PC detected: MineOS can't be installed on tablets.")
 end
 
-if screen.setPrecise and screen.setPrecise(false) == nil then
-	table.insert(reasons, "Low-tier screen detected: MineOS requires Tier3 screen to work properly.")
-else
+
 	if gpu.maxResolution() < 80 then
 		table.insert(reasons, "Low-tier GPU detected: MineOS requires Tier3 GPU to work properly.")
 	end
-end
+
 
 if computer.totalMemory() < 1572864 then
 	table.insert(reasons, "Not enough RAM: MineOS requires at least 2MB (2x Tier3 RAM modules) to work properly.")
